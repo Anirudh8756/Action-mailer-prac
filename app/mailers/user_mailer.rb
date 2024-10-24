@@ -6,4 +6,9 @@ class UserMailer < ApplicationMailer
         @user = user
         mail(to: @user.email, subject: 'Welcome to The Website.!!' )
     end
+
+    def confirmation_mailer(user)
+        @user = user
+        mail(to: @user.email, subject: 'Suspicious login')
+    end
 end

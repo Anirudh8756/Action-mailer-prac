@@ -4,8 +4,7 @@ class UsersController  < ApplicationController
      end
 
      def send_welcome_email
-
       @user = User.find(params[:user_id])
-      puts @user.email
+      UserMailer.welcome_email(@user).deliver
      end
 end
